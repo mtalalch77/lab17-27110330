@@ -308,6 +308,51 @@
       white-space: nowrap;
     }
 
+    .special-banner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.4rem 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 1.1rem 1.25rem;
+      border: 2px solid var(--blue);
+      border-radius: 1.25rem;
+      background: var(--mango);
+      color: var(--blue);
+    }
+
+    .special-emoji {
+      grid-row: span 2;
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+
+    .special-label {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .special-banner h3 {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .special-banner p.special-line {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .special-banner .price {
+      font-size: 1rem;
+    }
+
     .about {
       display: grid;
       gap: 1.5rem;
@@ -506,6 +551,13 @@
           <h2 id="menu-title">The late-night menu</h2>
           <p>Pick your mood. We’ll make it fresh, yaar.</p>
         </div>
+
+        <aside class="special-banner" aria-label="Today's Special">
+          <span class="special-emoji" aria-hidden="true">🌶️</span>
+          <p class="special-label">Today's Special</p>
+          <h3>Masala Chai + Bun Kabab · <span class="price">Rs 320</span></h3>
+          <p class="special-line">Garam chai and a spicy bun kabab. Only tonight, so chalo, grab it before 3am!</p>
+        </aside>
 
         <div class="menu-category">
           <h3>Chai &amp; Drinks</h3>
