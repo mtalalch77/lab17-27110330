@@ -400,6 +400,34 @@
       gap: 1rem;
     }
 
+    .order-total {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem 1rem;
+      max-width: 620px;
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--mango);
+      border-radius: 1rem;
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .order-total-sum {
+      color: var(--blue);
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .order-total-detail {
+      flex-basis: 100%;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
     .field {
       display: grid;
       gap: 0.35rem;
@@ -656,14 +684,14 @@
               <label for="order-item">Choose your item</label>
               <select id="order-item" name="item" required>
                 <option value="" selected disabled>Select a menu item</option>
-                <option>Doodh Patti Chai</option>
-                <option>Classic Lemonade</option>
-                <option>Chicken Paratha Roll</option>
-                <option>Anda Paratha Roll</option>
-                <option>Cheese Aloo Roll</option>
-                <option>Masala Fries</option>
-                <option>Chicken Samosa</option>
-                <option>Warm Brownie</option>
+                <option data-price="150">Doodh Patti Chai</option>
+                <option data-price="180">Classic Lemonade</option>
+                <option data-price="350">Chicken Paratha Roll</option>
+                <option data-price="250">Anda Paratha Roll</option>
+                <option data-price="300">Cheese Aloo Roll</option>
+                <option data-price="220">Masala Fries</option>
+                <option data-price="200">Chicken Samosa</option>
+                <option data-price="280">Warm Brownie</option>
               </select>
             </div>
             <div class="field">
@@ -674,6 +702,11 @@
           <button class="button" type="submit">Send my order</button>
           <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
         </form>
+        <div class="order-total" aria-live="polite">
+          <strong>Your total</strong>
+          <span class="order-total-sum" id="order-total-sum">Rs 0</span>
+          <p class="order-total-detail" id="order-total-detail">Pick an item to see your total, yaar.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -686,6 +719,34 @@
     const nameInput = document.querySelector("#customer-name");
     const quantityInput = document.querySelector("#quantity");
     const formMessage = document.querySelector("#form-message");
+    const itemSelect = document.querySelector("#order-item");
+    const totalSum = document.querySelector("#order-total-sum");
+    const totalDetail = document.querySelector("#order-total-detail");
+
+    function updateTotal() {
+      const picked = itemSelect.selectedOptions[0];
+      const price = Number(picked && picked.dataset.price);
+      const quantity = Math.floor(Number(quantityInput.value));
+
+      if (!price) {
+        totalSum.textContent = "Rs 0";
+        totalDetail.textContent = "Pick an item to see your total, yaar.";
+        return;
+      }
+
+      if (!quantity || quantity < 1) {
+        totalSum.textContent = "Rs 0";
+        totalDetail.textContent = "Choose a quantity of at least 1.";
+        return;
+      }
+
+      totalSum.textContent = `Rs ${price * quantity}`;
+      totalDetail.textContent = `${quantity} × ${picked.textContent} at Rs ${price} each`;
+    }
+
+    itemSelect.addEventListener("change", updateTotal);
+    quantityInput.addEventListener("input", updateTotal);
+    orderForm.addEventListener("reset", () => setTimeout(updateTotal, 0));
 
     orderForm.addEventListener("submit", (event) => {
       event.preventDefault();
