@@ -8,7 +8,7 @@
   <title>Khokha 330 | Late-night bites for LUMS legends</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
@@ -16,9 +16,6 @@
       --blue: #1F3A5F;
       --mango: #F2A541;
       --ink: #2B2B2B;
-      --blue-wash: rgba(31, 58, 95, 0.08);
-      --blue-line: rgba(31, 58, 95, 0.18);
-      --mango-wash: rgba(242, 165, 65, 0.2);
     }
 
     * {
@@ -45,7 +42,7 @@
     .brand {
       color: var(--blue);
       font-family: "Poppins", sans-serif;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.15;
     }
 
@@ -62,7 +59,7 @@
       justify-content: space-between;
       gap: 1rem;
       padding: 0.85rem 5vw;
-      border-bottom: 1px solid var(--blue-line);
+      border-bottom: 1px solid var(--blue);
       background: var(--cream);
     }
 
@@ -166,7 +163,7 @@
       margin: 0 auto;
       border: 2px solid var(--blue);
       border-radius: 46% 54% 48% 52% / 54% 43% 57% 46%;
-      background: var(--mango-wash);
+      background: var(--mango);
       color: var(--blue);
       text-align: center;
       transform: rotate(2deg);
@@ -206,7 +203,7 @@
       background: var(--cream);
       font-family: "Poppins", sans-serif;
       font-size: 1.35rem;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.3;
       transform: rotate(-2deg);
     }
@@ -238,7 +235,8 @@
     }
 
     .menu {
-      background: var(--blue-wash);
+      border-top: 3px solid var(--mango);
+      background: var(--cream);
     }
 
     .menu-category + .menu-category {
@@ -272,7 +270,7 @@
       align-items: start;
       gap: 0.8rem;
       padding: 1rem;
-      border: 1px solid var(--blue-line);
+      border: 1px solid var(--blue);
       border-radius: 1rem;
       background: var(--cream);
     }
@@ -283,7 +281,7 @@
       width: 2.7rem;
       height: 2.7rem;
       border-radius: 50%;
-      background: var(--mango-wash);
+      background: var(--mango);
       font-size: 1.35rem;
     }
 
@@ -363,7 +361,7 @@
       padding: 1.4rem;
       border: 2px solid var(--blue);
       border-radius: 1.25rem;
-      background: var(--mango-wash);
+      background: var(--mango);
       font-size: 1.05rem;
     }
 
@@ -562,7 +560,7 @@
   <main>
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">GARAM CHAI TILL 3AM, YAAR</p>
+        <p class="eyebrow">Garam chai till 3am, yaar</p>
         <h1 id="hero-title">Late-night bites for <span>LUMS legends.</span></h1>
         <p class="hero-copy">Chai garam, parathas fresh, and your midnight cravings sorted. Chalo, make tonight delicious.</p>
         <a class="button" href="#menu">Explore the menu</a>
