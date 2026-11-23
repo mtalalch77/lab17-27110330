@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF8EE">
+  <meta name="description" content="Late-night bites for LUMS legends. Chai, rolls and snacks, fresh from Khokha 330.">
+  <title>Khokha 330 | Late-night bites for LUMS legends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #FFF8EE;
+      --blue: #1F3A5F;
+      --mango: #F2A541;
+      --ink: #2B2B2B;
+      --blue-wash: rgba(31, 58, 95, 0.08);
+      --blue-line: rgba(31, 58, 95, 0.18);
+      --mango-wash: rgba(242, 165, 65, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Nunito", sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand {
+      color: var(--blue);
+      font-family: "Poppins", sans-serif;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 5vw;
+      border-bottom: 1px solid var(--blue-line);
+      background: var(--cream);
+    }
+
+    .brand {
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--blue);
+      text-decoration: underline;
+      text-decoration-color: var(--mango);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.3rem;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      max-width: 1180px;
+      min-height: 520px;
+      margin: 0 auto;
+      padding: 4.5rem 5vw;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      margin: 0;
+      font-size: clamp(2.6rem, 11vw, 5.7rem);
+      letter-spacing: -0.06em;
+    }
+
+    .hero h1 span {
+      color: var(--mango);
+    }
+
+    .hero-copy {
+      max-width: 520px;
+      margin: 1.25rem 0 1.75rem;
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 3.2rem;
+      padding: 0.7rem 1.25rem;
+      border: 2px solid var(--blue);
+      border-radius: 999px;
+      background: var(--blue);
+      color: var(--cream);
+      font: inherit;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+      cursor: pointer;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--mango);
+      color: var(--blue);
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: min(100%, 390px);
+      min-height: 290px;
+      margin: 0 auto;
+      border: 2px solid var(--blue);
+      border-radius: 46% 54% 48% 52% / 54% 43% 57% 46%;
+      background: var(--mango-wash);
+      color: var(--blue);
+      text-align: center;
+      transform: rotate(2deg);
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      position: absolute;
+      width: 4.5rem;
+      height: 4.5rem;
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      background: var(--cream);
+      content: "";
+    }
+
+    .hero-art::before {
+      top: 1.2rem;
+      right: 0.5rem;
+    }
+
+    .hero-art::after {
+      bottom: 1.5rem;
+      left: 0.3rem;
+    }
+
+    .art-label {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 75%;
+      min-height: 180px;
+      padding: 1rem;
+      border: 2px dashed var(--blue);
+      border-radius: 50%;
+      background: var(--cream);
+      font-family: "Poppins", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      transform: rotate(-2deg);
+    }
+
+    .section {
+      padding: 4.5rem 5vw;
+    }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .order h2 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin: 0.75rem 0 0;
+    }
+
+    .menu {
+      background: var(--blue-wash);
+    }
+
+    .menu-category + .menu-category {
+      margin-top: 2.4rem;
+    }
+
+    .menu-category h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+    }
+
+    .menu-category h3::after {
+      height: 2px;
+      flex: 1;
+      background: var(--mango);
+      content: "";
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+
+    .menu-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: start;
+      gap: 0.8rem;
+      padding: 1rem;
+      border: 1px solid var(--blue-line);
+      border-radius: 1rem;
+      background: var(--cream);
+    }
+
+    .menu-emoji {
+      display: grid;
+      place-items: center;
+      width: 2.7rem;
+      height: 2.7rem;
+      border-radius: 50%;
+      background: var(--mango-wash);
+      font-size: 1.35rem;
+    }
+
+    .menu-card h4 {
+      margin: 0;
+      color: var(--blue);
+      font-family: "Poppins", sans-serif;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .menu-card p {
+      margin: 0.15rem 0 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .price {
+      color: var(--blue);
+      font-size: 0.88rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .about {
+      display: grid;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .about-note {
+      padding: 1.4rem;
+      border: 2px solid var(--blue);
+      border-radius: 1.25rem;
+      background: var(--mango-wash);
+      font-size: 1.05rem;
+    }
+
+    .about-note p {
+      margin: 0;
+    }
+
+    .about-note p + p {
+      margin-top: 0.8rem;
+    }
+
+    .order {
+      background: var(--blue);
+      color: var(--cream);
+    }
+
+    .order h2,
+    .order .eyebrow {
+      color: var(--cream);
+    }
+
+    .order .section-heading p {
+      max-width: 540px;
+    }
+
+    .order-form {
+      display: grid;
+      gap: 1rem;
+      max-width: 620px;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .field label {
+      font-weight: 800;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.7rem 0.8rem;
+      border: 2px solid var(--cream);
+      border-radius: 0.65rem;
+      background: var(--cream);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: 3px solid var(--mango);
+      outline-offset: 2px;
+    }
+
+    .field-hint {
+      font-size: 0.85rem;
+    }
+
+    .order .button {
+      justify-self: start;
+      border-color: var(--mango);
+      background: var(--mango);
+      color: var(--blue);
+    }
+
+    .order .button:hover,
+    .order .button:focus-visible {
+      background: var(--cream);
+      color: var(--blue);
+    }
+
+    .form-message {
+      min-height: 1.6rem;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    .site-footer {
+      padding: 1.4rem 5vw;
+      background: var(--cream);
+      color: var(--blue);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    @media (min-width: 700px) {
+      .site-header {
+        padding-right: max(5vw, calc((100vw - 1180px) / 2));
+        padding-left: max(5vw, calc((100vw - 1180px) / 2));
+      }
+
+      .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .hero-art {
+        width: 100%;
+        min-height: 330px;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about {
+        grid-template-columns: 1fr 0.9fr;
+      }
+
+      .form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 380px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .site-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .menu-card {
+        grid-template-columns: auto 1fr;
+      }
+
+      .price {
+        grid-column: 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Khokha 330 home">Khokha 330</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="about.html">About</a>
+      <a href="#order">Order</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Your campus-night favourite</p>
+        <h1 id="hero-title">Late-night bites for <span>LUMS legends.</span></h1>
+        <p class="hero-copy">Chai garam, parathas fresh, and your midnight cravings sorted. Chalo, make tonight delicious.</p>
+        <a class="button" href="#menu">Explore the menu</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-label">Made fresh.<br>Served late.<br>Always worth it.</div>
+      </div>
+    </section>
+
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Good food, no fuss</p>
+          <h2 id="menu-title">The late-night menu</h2>
+          <p>Pick your mood. We’ll make it fresh, yaar.</p>
+        </div>
+
+        <div class="menu-category">
+          <h3>Chai &amp; Drinks</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">☕</span>
+              <div><h4>Doodh Patti Chai</h4><p>Strong, creamy chai for long study nights.</p></div>
+              <span class="price">Rs 150</span>
+            </article>
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🥤</span>
+              <div><h4>Classic Lemonade</h4><p>Fresh lemon with a cool, zesty kick.</p></div>
+              <span class="price">Rs 180</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Paratha Rolls</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🌯</span>
+              <div><h4>Chicken Paratha Roll</h4><p>Spiced chicken tucked in a flaky paratha.</p></div>
+              <span class="price">Rs 350</span>
+            </article>
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🥚</span>
+              <div><h4>Anda Paratha Roll</h4><p>Soft egg, chutney and paratha, all rolled up.</p></div>
+              <span class="price">Rs 250</span>
+            </article>
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🧀</span>
+              <div><h4>Cheese Aloo Roll</h4><p>Comforting potato with a melty cheese finish.</p></div>
+              <span class="price">Rs 300</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Late-Night Snacks</h3>
+          <div class="menu-grid">
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🍟</span>
+              <div><h4>Masala Fries</h4><p>Crispy fries tossed in our chatpata masala.</p></div>
+              <span class="price">Rs 220</span>
+            </article>
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🥟</span>
+              <div><h4>Chicken Samosa</h4><p>Golden, crunchy parcels with a savoury filling.</p></div>
+              <span class="price">Rs 200</span>
+            </article>
+            <article class="menu-card">
+              <span class="menu-emoji" aria-hidden="true">🍰</span>
+              <div><h4>Warm Brownie</h4><p>Rich chocolate brownie, warmed just right.</p></div>
+              <span class="price">Rs 280</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="section-inner about">
+        <div>
+          <p class="eyebrow">A little about us</p>
+          <h2 id="about-title">Your khokha, after dark.</h2>
+        </div>
+        <div class="about-note">
+          <p>Late-night study session? Hostel hangout? We’re here for all of it.</p>
+          <p>Khokha 330 brings campus comfort food to your night, made fresh and served with a smile. Bas, bring your appetite.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order" id="order" aria-labelledby="order-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Hungry already?</p>
+          <h2 id="order-title">Place your order</h2>
+          <p>Send us your pick and we’ll get things rolling.</p>
+        </div>
+        <form class="order-form" id="order-form">
+          <div class="form-row">
+            <div class="field">
+              <label for="customer-name">Your name</label>
+              <input id="customer-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="customer-phone">Phone number</label>
+              <input id="customer-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" pattern="03[0-9]{9}" maxlength="11" aria-describedby="phone-hint" required>
+              <span class="field-hint" id="phone-hint">Enter 11 digits starting with 03.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="order-item">Choose your item</label>
+              <select id="order-item" name="item" required>
+                <option value="" selected disabled>Select a menu item</option>
+                <option>Doodh Patti Chai</option>
+                <option>Classic Lemonade</option>
+                <option>Chicken Paratha Roll</option>
+                <option>Anda Paratha Roll</option>
+                <option>Cheese Aloo Roll</option>
+                <option>Masala Fries</option>
+                <option>Chicken Samosa</option>
+                <option>Warm Brownie</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="quantity">Quantity</label>
+              <input id="quantity" name="quantity" type="number" min="1" step="1" value="1" required>
+            </div>
+          </div>
+          <button class="button" type="submit">Send my order</button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">Open 8pm to 3am, near LUMS, DHA Lahore</footer>
+
+  <script>
+    const orderForm = document.querySelector("#order-form");
+    const phoneInput = document.querySelector("#customer-phone");
+    const nameInput = document.querySelector("#customer-name");
+    const quantityInput = document.querySelector("#quantity");
+    const formMessage = document.querySelector("#form-message");
+
+    orderForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formMessage.textContent = "";
+      nameInput.value = nameInput.value.trim();
+
+      if (!nameInput.value) {
+        nameInput.setCustomValidity("Please enter your name.");
+      } else {
+        nameInput.setCustomValidity("");
+      }
+
+      if (!/^03\d{9}$/.test(phoneInput.value)) {
+        phoneInput.setCustomValidity("Please enter 11 digits starting with 03.");
+      } else {
+        phoneInput.setCustomValidity("");
+      }
+
+      if (!Number.isInteger(Number(quantityInput.value)) || Number(quantityInput.value) < 1) {
+        quantityInput.setCustomValidity("Please choose a quantity of at least 1.");
+      } else {
+        quantityInput.setCustomValidity("");
+      }
+
+      if (!orderForm.reportValidity()) {
+        return;
+      }
+
+      formMessage.textContent = `Thanks, ${nameInput.value}! We got your order. See you soon!`;
+      orderForm.reset();
+    });
+
+    nameInput.addEventListener("input", () => nameInput.setCustomValidity(""));
+    phoneInput.addEventListener("input", () => phoneInput.setCustomValidity(""));
+    quantityInput.addEventListener("input", () => quantityInput.setCustomValidity(""));
+  </script>
+</body>
+</html>
